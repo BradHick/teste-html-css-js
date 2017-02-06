@@ -6,4 +6,10 @@ var removerItem = function(event){
 }
 
 
-$(".excluir-item").click(removerItem);
+var aposInicializado = function(){
+  $(".excluir-item").click(removerItem);
+
+
+}
+
+$(aposInicializado);
