@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Teste CRUD</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilo.css">
+  </head>
+
+  <body>
+    <main>
+
+      <header>
+        <h1 class="titulo-pagina">CRUD Produtos</h1>
+      </header>
+      <div class="container">
+
+        <form class="" action="index.html" method="post">
+          <fieldset>
+            <legend>Cadastrar</legend>
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome"  required autofocus pattern="[A-Za-z ']{3,}" title="O nome precisa ter pelo menos 3 caracteres">
+            <label for="preco">Preço: </label>
+            <input type="number" step="0.01" id="preco"  required >
+
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" cols="60" rows="10" placeholder="Digite aqui a descrição do produto"></textarea>
+            <button type="submit" class="botao-home">Cadastrar</button>
+
+
+          </fieldset>
+        </form>
+
+
+
+
+
+
+        <table class="produtos">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nome-prod">Peruca Neylor's Style</td>
+                    <td class="preco-prod">99,99</td>
+                    <td class="descricao-prod">Ideal para quando cortar o cabelo continuar parecido com o pai</td>
+                    <td><a href="" class="editar-item">Editar</a>  |  <a href="" class="excluir-item">Excluir</a></td>
+                </tr>
+                <tr>
+                    <td class="nome-prod">Camisa manga longa</td>
+                    <td class="preco-prod">19,99</td>
+                    <td class="descricao-prod">Perfeita para esconder as marcas do crazy love</td>
+                    <td><a href="" class="editar-item">Editar</a>  |  <a href="" class="excluir-item">Excluir</a></td>
+                </tr>
+                <tr>
+                    <td class="nome-prod">iPhone 8</td>
+                    <td class="preco-prod">11.000,00</td>
+                    <td class="descricao-prod">Mas vc pode vender seu cabelo ou sua família pra comprar</td>
+                    <td><a href="" class="editar-item">Editar</a>  |  <a href="" class="excluir-item">Excluir</a></td>
+                </tr>
+                <tr>
+                    <td class="nome-prod">Gerenciador de esquemas</td>
+                    <td class="preco-prod">2.000,00</td>
+                    <td class="descricao-prod">Para todo sultão controlar seu harem</td>
+                    <td><a href="" class="editar-item">Editar</a>  |  <a href="" class="excluir-item">Excluir</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+      </div>
+    </main>
+    <footer class="rodape-pagina">
+        &copy; Fi do Neylor S.A
+    </footer>
+      <script src="js/jquery.js"></script>
+      <script src="js/crud.js"></script>
+
+      </script>
+  </body>
+</html>

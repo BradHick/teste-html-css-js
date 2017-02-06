@@ -1,0 +1,171 @@
+.titulo-pagina {
+    text-align: center;
+    height: 1em;
+    font-size: 2em;
+    background-color: #444;
+    color: #FFF;
+    padding: 1em;
+    border-bottom: .5rem solid #000;
+    clear: both;
+
+}
+
+body {
+    font-family: "Crimson Text", "Times New Roman", serif;
+    /*background-color: #white;*/
+    font-size: 120%;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(45deg, transparent, transparent 14px, rgba(255,255,255,.2) 14px, rgba(255,255,255,.2) 15px, transparent 15px, transparent);
+    background-size: 20px 20px;
+    background-attachment: fixed;
+    background-color: lightgray;
+    position: relative;
+
+
+
+}
+
+form {
+  background:#fff;
+  margin:0 auto;
+  text-align:left;
+  width:640px;
+}
+fieldset{
+  margin-top: 5em;
+  padding: 2em;
+}
+
+legend{
+  font-size: 2em;
+}
+
+legend,
+label[for="descricao"] {
+    font-weight: bold;
+    margin-top: 1em;
+}
+label[for],
+button {
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    padding: .25em .5em;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+button {
+    border: 0;
+    padding: .5em 1em;
+    background-color: #444;
+    color: white;
+    font-size: 1.2em;
+    margin-right: auto;
+    margin-top: 1em;
+}
+input:invalid {
+    box-shadow: 0 0 3px red;
+}
+input:focus,
+textarea:focus {
+    background-color: lightgray;
+}
+button:focus {
+    background-color: lightgray;
+}
+
+.container {
+    width: 90ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5.5em 0;
+    background-color: white;
+}
+
+main {
+    padding-bottom: 4em;
+    flex-grow: 1;
+}
+
+header{
+  color: #F2FFFC;
+
+  clear: both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%
+}
+
+.rodape-pagina {
+    color: #F2FFFC;
+    padding: 1em;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    text-shadow: 1px 1px black;
+    background-image: radial-gradient(ellipse at left bottom,
+        rgba(4, 4, 4, 0.8),
+        rgba(5, 5, 5, 0.8) 65%,
+        black 65%,
+        black 70%,
+        transparent 70%);
+    background-size: 25% 100%;
+}
+
+.produtos {
+    border-collapse: separate;
+    border-spacing: .25em;
+    margin: 1em 0;
+}
+
+.produtos th {
+    font-weight: bold;
+    background-color: #851944;
+    color: white;
+}
+
+.produtos td {
+    background-color: #eee;
+}
+
+.produtos th,
+.produtos td {
+    padding: 1em;
+}
+
+.produtos thead th {
+    background-color: #555;
+}
+
+.botao-home{
+  font-size: 1.25em;
+  background-color: #444;
+  color: #FFF;
+  padding: .5em;
+  border: .2em solid black;
+  width: 15ch;
+  margin: 2em auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.botao-home:hover{
+  background-color: lightblue;
+  color: white;
+  box-shadow: 0 0 1em #FA9;
+}
