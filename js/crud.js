@@ -17,7 +17,7 @@ var resetaForm = function(){
 var adicionarItem = function(event){
   event.preventDefault();
   var nome = $("#nome").val();
-  var preco = parseFloat($("#preco").val());
+  var preco = $("#preco").maskMoney({decimal:",", thousands:"."}).val();
   var descricao = $("#descricao").val();
 
 
@@ -33,12 +33,44 @@ var adicionarItem = function(event){
 
   $(".produtos").find("tbody").append(tr);
   $(".excluir-item").click(removerItem);
+  $(".editar-item").click(editarItem);
   resetaForm();
 
 }
 
+var editarItem = function(event){
+  event.preventDefault();
+  var self = $(this);
+  var nome = self.closest("tr").find(".nome-prod").text();
+  var preco = self.closest("tr").find(".preco-prod").text();
+  var descricao = self.closest("tr").find(".descricao-prod").text();
+
+  $("#nome").val(nome);
+  $("#preco").val(preco);
+  $("#descricao").val(descricao);
+
+  $(".botao-home").addClass("editar");
+  $(".botao-home").text("Salvar Edição");
+  
+
+  $(".editar").removeClass("botao-home");
+
+  $(".editar").click(salvarEdicao);
+
+  var salvarEdicao = function() {
+    self.closest("tr").find(".nome-prod").text(nome);
+    self.closest("tr").find(".preco-prod").text(preco);
+    self.closest("tr").find(".descricao-prod").text(descricao);
+    $(".botao-home").removeClass("editar");
+  }
+
+}
+
+
 var aposInicializado = function(){
+  $("#preco").maskMoney({decimal:",", thousands:"."});
   $(".excluir-item").click(removerItem);
+  $(".editar-item").click(editarItem);
   $(".botao-home").click(adicionarItem);
 
 
