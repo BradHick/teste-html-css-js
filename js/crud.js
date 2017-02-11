@@ -1,4 +1,5 @@
 var ultimoId = 0
+var id;
 
 var removerItem = function(event){
   event.preventDefault(); //evita que a página tete ir pra algum luga
@@ -44,29 +45,33 @@ var adicionarItem = function(event){
 var editarItem = function(event){
   event.preventDefault();
   var self = $(this);
-  var nome = self.closest("tr").find(".nome-prod").text();
-  var preco = self.closest("tr").find(".preco-prod").text();
-  var descricao = self.closest("tr").find(".descricao-prod").text();
+  var produto = self.closest("tr");
+  id = produto.attr("id");
+  var nome = produto.find(".nome-prod").text();
+  var preco = produto.find(".preco-prod").text();
+  var descricao = produto.find(".descricao-prod").text();
 
   $("#nome").val(nome);
   $("#preco").val(preco);
   $("#descricao").val(descricao);
 
-  $(".botao-home").addClass("editar");
-  $(".botao-home").text("Salvar Edição");
+  $(".botao-home").hide();
+
+  $(".editar").show();
 
 
-  $(".editar").removeClass("botao-home");
+  var salvarEdicao = function(event) {
+    event.preventDefault();
+    var novoProduto = $("#"+id);
+    novoProduto.find(".nome-prod").text($("#nome").val());
+    novoProduto.find(".preco-prod").text($("#preco").val());
+    novoProduto.find(".descricao-prod").text($("#descricao").val());
 
-  $(".editar").click(salvarEdicao);
-
-  var salvarEdicao = function() {
-    self.closest("tr").find(".nome-prod").text(nome);
-    self.closest("tr").find(".preco-prod").text(preco);
-    self.closest("tr").find(".descricao-prod").text(descricao);
-    $(".botao-home").removeClass("editar");
+    $(".botao-home").show();
+    $(".editar").hide();
   }
 
+  $(".editar").click(salvarEdicao);
 }
 
 var contaItens = function(){
@@ -87,6 +92,7 @@ var aposInicializado = function(){
   $(".excluir-item").click(removerItem);
   $(".editar-item").click(editarItem);
   $(".botao-home").click(adicionarItem);
+  $(".editar").hide();
   contaItens();
 
 
