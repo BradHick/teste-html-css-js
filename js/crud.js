@@ -1,3 +1,5 @@
+var ultimoId = 0
+
 var removerItem = function(event){
   event.preventDefault(); //evita que a página tete ir pra algum luga
   var self = $(this);
@@ -19,9 +21,10 @@ var adicionarItem = function(event){
   var nome = $("#nome").val();
   var preco = $("#preco").maskMoney({decimal:",", thousands:"."}).val();
   var descricao = $("#descricao").val();
-
+  ultimoId += 1;
 
   var tr = $("<tr>").append($("<td>").text(nome).addClass("nome-prod"));
+  tr.attr("id", ultimoId);
   tr.append($("<td>").addClass("preco-prod").text(preco));
   tr.append($("<td>").addClass("descricao-prod").text(descricao));
 
@@ -51,7 +54,7 @@ var editarItem = function(event){
 
   $(".botao-home").addClass("editar");
   $(".botao-home").text("Salvar Edição");
-  
+
 
   $(".editar").removeClass("botao-home");
 
@@ -66,12 +69,25 @@ var editarItem = function(event){
 
 }
 
+var contaItens = function(){
+  var listaProdutos = $(".lista-produtos"); //fazendo isso, caso apareçam mais listas, a function já estará preparada
+  listaProdutos.each(function() {
+    var lista = $(this);
+    var items = lista.find("tr");
+    for(var i=0; i < items.length; i++) {
+      $(items[i]).attr("id", i);
+      ultimoId = i;
+
+    }
+  });
+}
 
 var aposInicializado = function(){
   $("#preco").maskMoney({decimal:",", thousands:"."});
   $(".excluir-item").click(removerItem);
   $(".editar-item").click(editarItem);
   $(".botao-home").click(adicionarItem);
+  contaItens();
 
 
 }
