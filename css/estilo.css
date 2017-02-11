@@ -164,8 +164,14 @@ header{
   text-decoration: none;
 }
 
-.botao-home:hover{
-  background-color: lightblue;
+.editar{
+  border: .2em solid black;
+}
+
+.botao-home:hover,
+.editar:hover
+{
+  background-color: rgba(1, 192, 233, 0.64);
   color: white;
-  box-shadow: 0 0 1em #FA9;
+  box-shadow: 0 0 1em #00cef2;
 }
