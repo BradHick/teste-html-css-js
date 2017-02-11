@@ -55,6 +55,7 @@ var editarItem = function(event){
   $("#preco").val(preco);
   $("#descricao").val(descricao);
 
+  $("#nome").focus();
   $(".botao-home").hide();
 
   $(".editar").show();
@@ -67,8 +68,10 @@ var editarItem = function(event){
     novoProduto.find(".preco-prod").text($("#preco").val());
     novoProduto.find(".descricao-prod").text($("#descricao").val());
 
+    resetaForm();
     $(".botao-home").show();
     $(".editar").hide();
+    $(".lista-produtos").focus();
   }
 
   $(".editar").click(salvarEdicao);
